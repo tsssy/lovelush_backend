@@ -3,6 +3,7 @@ from flask import Flask, Blueprint, request, jsonify
 from flask_restx import Api, Namespace, fields, Resource
 from database import Database
 
+print("taotao")
 app = Flask(__name__)
 api = Api(app, version='1.0', title='用户管理 API', description='用户管理相关接口文档')
 
