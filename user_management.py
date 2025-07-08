@@ -1,9 +1,11 @@
 # user_management.py
 from flask import Flask, Blueprint, request, jsonify
 from flask_restx import Api, Namespace, fields, Resource
+from flask_cors import CORS
 from database import Database
 
 app = Flask(__name__)
+CORS(app)
 api = Api(app, version='1.0', title='用户管理 API', description='用户管理相关接口文档')
 
 user_ns = Namespace('users', description='用户操作')
