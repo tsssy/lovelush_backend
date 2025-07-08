@@ -64,7 +64,9 @@ if __name__ == '__main__':
     # 连接数据库
     Database.connect()
     try:
-        app.run(host='127.0.0.1', debug=True)
+        # 在服务器上的 user_management.py 中
+        app.run(host='0.0.0.0', debug=True)
+        
     finally:
         # 确保在应用关闭时关闭数据库连接
         Database.close() 
