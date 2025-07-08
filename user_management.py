@@ -28,7 +28,8 @@ class MaleUsersAPI(Resource):
     @user_ns.response(400, 'Invalid Input')
     def post(self):
         """
-        创建一个新的男性用户。
+        创建一个新的男性用户,first,last,id,
+        gender,question。
         """
         data = request.get_json()
 
@@ -63,7 +64,7 @@ if __name__ == '__main__':
     # 连接数据库
     Database.connect()
     try:
-        app.run(host='0.0.0.0', debug=True)
+        app.run(host='127.0.0.1', debug=True)
     finally:
         # 确保在应用关闭时关闭数据库连接
         Database.close() 
